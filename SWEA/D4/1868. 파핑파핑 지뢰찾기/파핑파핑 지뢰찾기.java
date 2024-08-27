@@ -99,7 +99,7 @@ public class Solution {
 	}
 	
 	
-	public static void sum(int x, int y) {
+	public static void sum(int x, int y) { 
 		for(int i = 0; i<8; i++) {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
