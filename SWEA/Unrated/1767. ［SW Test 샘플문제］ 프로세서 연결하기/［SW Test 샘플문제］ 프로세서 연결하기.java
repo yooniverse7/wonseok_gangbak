@@ -131,6 +131,9 @@ public class Solution {
 			}
 			
 			else {
+				if(maxCoreCnt > connectedCore + (coreList.size() - cnt)) {
+					return;
+				}
 				// 연결하지 않고 넘어가기 
 				dfs(cnt+1, connectedCore, currentLine);
 			}
