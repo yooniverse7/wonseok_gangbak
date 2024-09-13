@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 public class Main {
 	public static int N, K;
+	public static int[][] arr;
 	
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -14,18 +15,21 @@ public class Main {
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         K = Integer.parseInt(st.nextToken());
+        arr = new int[N+1][K+1];
         
-        
-        int result = factorial(N) / (factorial(N-K) * factorial(K));
-        System.out.println(result);
+        System.out.println(factorial(N, K));
        
     }
-    public static int factorial(int N) {
+    public static int factorial(int N, int K) {
 		
-    	if(N <= 1) {
-    		return 1;
+    	if(arr[N][K] > 0) {
+    		return arr[N][K];
     	}
-    	return N * factorial(N-1);
+    	if (K == 0 || N == K) {
+			return arr[N][K] = 1;
+		}
+    	
+    	return arr[N][K] = factorial(N-1, K-1) + factorial(N-1, K);
 	}
     
 }
