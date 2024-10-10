@@ -60,7 +60,7 @@ public class Main {
 			System.out.println(0);
 		} else if(K==26){ // K가 26면 모두 다 읽을 수 있으므로 N 출력
 			System.out.println(N);
-		} else if(cnt <= (K-5)) {
+		} else if(cnt < (K-5)) { // 이 부분 추가됨. 
 			System.out.println(N);
 		} else {
 			backtracking(0, 0);
